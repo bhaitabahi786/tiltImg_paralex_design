@@ -81,8 +81,8 @@
 
         function handleOrientation(event) {
             const { beta, gamma } = event;
-            const rotateX = beta / 5; // Increase tilt effect for X-axis
-            const rotateY = gamma / 5; // Increase tilt effect for Y-axis
+            const rotateX = beta / 2; // Increase tilt effect for X-axis
+            const rotateY = gamma / 2; // Increase tilt effect for Y-axis
 
             updateTransforms(rotateX, rotateY);
         }
@@ -91,8 +91,8 @@
             const { clientX, clientY } = event;
             const halfWidth = window.innerWidth / 2;
             const halfHeight = window.innerHeight / 2;
-            const rotateX = (clientY - halfHeight) / 10; // Increase tilt effect
-            const rotateY = (clientX - halfWidth) / 10; // Increase tilt effect
+            const rotateX = (clientY - halfHeight) / 5; // Increase tilt effect
+            const rotateY = (clientX - halfWidth) / 5; // Increase tilt effect
 
             updateTransforms(rotateX, rotateY);
         }

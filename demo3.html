@@ -81,8 +81,8 @@
 
         function handleOrientation(event) {
             const { beta, gamma } = event;
-            const rotateX = beta / 10; // Decrease tilt effect for X-axis
-            const rotateY = gamma / 10; // Decrease tilt effect for Y-axis
+            const rotateX = beta / 5; // Increase tilt effect for X-axis
+            const rotateY = gamma / 5; // Increase tilt effect for Y-axis
 
             updateTransforms(rotateX, rotateY);
         }
@@ -91,8 +91,8 @@
             const { clientX, clientY } = event;
             const halfWidth = window.innerWidth / 2;
             const halfHeight = window.innerHeight / 2;
-            const rotateX = (clientY - halfHeight) / 20; // Decrease tilt effect
-            const rotateY = (clientX - halfWidth) / 20; // Decrease tilt effect
+            const rotateX = (clientY - halfHeight) / 10; // Increase tilt effect
+            const rotateY = (clientX - halfWidth) / 10; // Increase tilt effect
 
             updateTransforms(rotateX, rotateY);
         }
@@ -104,7 +104,7 @@
 
                 requestAnimationFrame(() => {
                     card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-                    image.style.transform = `translate(-${rotateY}px, -${rotateX}px)`;
+                    image.style.transform = `translate(-${rotateY * 2}px, -${rotateX * 2}px)`; // Amplify image translation
                     card.style.boxShadow = `${rotateY * 1.5}px ${rotateX * 1.5}px 20px rgba(0, 0, 0, 0.3)`;
                 });
             }
